@@ -6,4 +6,4 @@ try{
 }catch(e){
     console.log(e);
 }
-console.log('This statement will be execute after the execution of readdirsync');
+console.log('This statement will be execute after the execution of readFileSync');
