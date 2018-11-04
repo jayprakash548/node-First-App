@@ -21,6 +21,14 @@ fs.readdirSync(routesPath).forEach(function(file){
         route.setRouter(app);
     }
 });
+
+// Bootstrap Model
+let modelspath = './models'
+fs.readdirSync(modelspath).forEach(function(file){
+    if(~file.indexOf('.js')) require(modelspath + '/' + file);
+});
+//Bootstrap Model Ends Here
+
 app.listen(appConfig.port,() => {
     console.log('App running at port number 3000')
     //create mongo db connection here
