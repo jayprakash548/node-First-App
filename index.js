@@ -50,3 +50,28 @@ mongoose.connection.on('open', function(err){
         console.log('Connection Establish Successfully');
     }
 });// End mongoose connection open Handler
+
+//Callback hell
+setTimeout(function() {
+    console.log('I promised to run after 1 sec')
+    setTimeout(function() {
+        console.log('I promised to run after 2sec')
+        setTimeout(function(){
+            console.log('I promise to run after 3sec')
+        }, 1000)
+    }, 1000)
+}, 1000)
+//Shortout Callback hell using promises
+
+const wait = () => new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000)
+})
+wait().then(() => {
+    console.log('Promissed to run after 1 second')
+    return wait()
+})
+wait().then(() => {
+    console.log('Promissed to run after 2 second')
+    return wait()
+})
+.then(() => console.log('Promissed to run after 3 second'))
