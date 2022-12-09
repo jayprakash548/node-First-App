@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/jayprakash548/node-First-App#readme",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "mongoose": "^5.3.9"
   }
 }
